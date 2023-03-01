@@ -19,8 +19,8 @@ INSERT INTO trivia_answers (question_id, answer) VALUES (4, '== compares value a
 INSERT INTO trivia_answers (question_id, answer, is_correct) VALUES (4, '=== compares value and type, while == only compares value', true);
 INSERT INTO trivia_answers (question_id, answer) VALUES (4, 'None of the above');
 
-INSERT INTO trivia_answers (question_id, answer, is_correct) VALUES (5, 'for');
-INSERT INTO trivia_answers (question_id, answer) VALUES (5, 'switch', true);
+INSERT INTO trivia_answers (question_id, answer) VALUES (5, 'for');
+INSERT INTO trivia_answers (question_id, answer, is_correct) VALUES (5, 'switch', true);
 INSERT INTO trivia_answers (question_id, answer) VALUES (5, 'while');
 INSERT INTO trivia_answers (question_id, answer) VALUES (5, 'do-while');
 -- End of Test 1 Javscript Questions
