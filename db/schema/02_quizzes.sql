@@ -5,7 +5,7 @@ CREATE TABLE quizzes (
  owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
  title VARCHAR(255) NOT NULL,
  public_listed BOOLEAN DEFAULT true,
- url VARCHAR(25),
+ url VARCHAR(25)
 --  category VARCHAR(255),
 --  date_created TIMESTAMP,
 --  type VARCHAR(255) NOT NULL,
