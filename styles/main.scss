@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Russo One', sans-serif;
 }
 
-.hero {
+.slogan {
   text-align: center;
   padding: 3rem 0;
 }
@@ -48,6 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .quiz {
@@ -57,11 +58,31 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   width: calc(33.33% - 2rem);
   max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #107EEB;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #D9D9D9;
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
   background-color: #1D2236;
   padding: 1rem;
+  width: 100%;
   text-align: center;
 }
 
