@@ -1,6 +1,145 @@
 // See: https://sass-lang.com/
 
-body,
-html {
+/* General Styles */
+body {
+  background-color: #252C4A;
+  color: white;
+  font-family: 'Russo One', sans-serif;
   margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Russo One', sans-serif;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #1D2236;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo {
+  font-family: 'Russo One', sans-serif;
+  font-size: 36px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Hero Styles */
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* Create Quiz Page Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+
+form div {
+  margin: 1rem 0;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 24px;
+}
+
+form input[type="text"],
+form input[type="radio"] {
+  padding: 0.5rem;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1D2236;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+form input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  font-size: 24px;
+  background-color: #1D2236;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.privacy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.privacy input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.privacy label {
+  margin-right: 1rem;
+}
+
+ol {
+    list-style-type: upper-alpha;
+}
+
+/* Quizzes Styles */
+.quizzes {
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quiz {
+  background-color: white;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: calc(33.33% - 2rem);
+  max-width: 300px;
+}
+
+.quiz h2 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.quiz p {
+  margin: 0;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #1D2236;
+  padding: 1rem;
+  text-align: center;
 }
