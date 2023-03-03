@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Quizzes</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/users.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <a href="#">LightQuiz</a>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Create Quiz</a></li>
+      <li><a href="#">My Quizzes</a></li>
+      <li><a href="#">Log In</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="created-quizzes">
+      <h2>My Quizzes</h2>
+      <div class="quiz-card">
+        <div class="quiz-title">Quiz Title 1</div>
+        <div class="quiz-actions">
+          <button class="btn edit-btn">Edit</button>
+          <button class="btn share-btn">Share</button>
+        </div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-title">Quiz Title 2</div>
+        <div class="quiz-actions">
+          <button class="btn edit-btn">Edit</button>
+          <button class="btn share-btn">Share</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="attempted-quizzes">
+      <h2>Quizzes History</h2>
+      <div class="quiz-card">
+        <div class="quiz-title">Quiz Title 1</div>
+        <div class="quiz-actions">
+          <button class="btn score-btn">View Score</button>
+          <button class="btn retake-btn">Retake</button>
+        </div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-title">Quiz Title 2</div>
+        <div class="quiz-actions">
+          <button class="btn score-btn">View Score</button>
+          <button class="btn retake-btn">Retake</button>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2023 LightQuiz. All rights reserved.</p>
+  </footer>
+</body>
