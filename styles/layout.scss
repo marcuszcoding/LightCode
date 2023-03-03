@@ -1,6 +1,5 @@
 // See: https://sass-lang.com/
 
-/* General Styles */
 body {
   background-color: #252C4A;
   color: white;
@@ -12,7 +11,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Russo One', sans-serif;
 }
 
-/* Navigation Styles */
 nav {
   background-color: #1D2236;
   display: flex;
@@ -42,13 +40,6 @@ nav a {
   color: white;
 }
 
-/* Hero Styles */
-.hero {
-  text-align: center;
-  padding: 3rem 0;
-}
-
-/* Create Quiz Page Styles */
 form {
   display: flex;
   flex-direction: column;
@@ -110,7 +101,6 @@ ol {
     list-style-type: upper-alpha;
 }
 
-/* Quizzes Styles */
 .quizzes {
   padding: 3rem;
   display: flex;
@@ -137,9 +127,11 @@ ol {
   margin: 0;
 }
 
-/* Footer Styles */
 footer {
+  position: fixed;
+  bottom: 0;
   background-color: #1D2236;
   padding: 1rem;
+  width: 100%;
   text-align: center;
 }
