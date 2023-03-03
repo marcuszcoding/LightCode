@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+    <nav>
+    <div class="logo">
+      <a href="#">LightQuiz</a>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Create Quiz</a></li>
+      <li><a href="#">My Quizzes</a></li>
+      <li><a href="#">Log In</a></li>
+    </ul>
+  </nav>
+<h1>Make Your Own Quiz</h1>
+
+<form>
+  <div>
+    <label for="quiz-title">Quiz Title:</label>
+    <input type="text" id="quiz-title" name="quiz-title" required>
+  </div>
+  <div class="privacy">
+          <input id="is-private" type="radio" name="isPrivate" value="true">Private</input>
+          <input id="is-public" type="radio" name="isPrivate" value="false">Public</input>
+  </div>
+  <div>
+    <label for="quiz-questions">Question:</label>
+    <input type="text" id="quiz-questions" name="quiz-questions" required>
+  </div>
+  <div>
+    <label for="quiz-answers">Answers:</label>
+        <ol>
+          <li><input type="text" id="answer-1-1" name="answer-1-1" required></li>
+          <li><input type="text" id="answer-1-2" name="answer-1-2" required></li>
+          <li><input type="text" id="answer-1-3" name="answer-1-3" required></li>
+          <li><input type="text" id="answer-1-4" name="answer-1-4" required></li>
+        </ol>
+
+  </div>
+  <div>
+    <button type="submit">Add Question</button>
+  </div>
+  <div>
+    <button type="submit">Create Quiz</button>
+  </div>
+</form>
+ <footer>
+    <p>&copy; 2023 LightQuiz. All Rights Reserved.</p>
+  </footer>
+</body>
