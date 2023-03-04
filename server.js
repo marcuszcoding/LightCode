@@ -31,14 +31,16 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require("./routes/users-api");
 const widgetApiRoutes = require("./routes/widgets-api");
-const usersRoutes = require("./routes/quizzes-api");
+const quizApiRoutes = require("./routes/quizzes-api"); // Interacting with the database
+const quizRoutes = require("./routes/quizzes"); //
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use("/api/users", userApiRoutes);
 app.use("/api/widgets", widgetApiRoutes);
-app.use("/api/quizzes", usersRoutes);
+app.use("/api/quizzes", quizApiRoutes);
+app.use("/quizzes", quizRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -46,7 +48,7 @@ app.use("/api/quizzes", usersRoutes);
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.redirect("/quizzes");
 });
 
 app.listen(PORT, () => {
