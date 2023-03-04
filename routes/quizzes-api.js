@@ -87,7 +87,7 @@ router.post("/:id", (req, res) => {
           .json({ message: "quiz does not belongs to you!" });
       }
 
-      return quizzesQueries.update({ owner_id, title, public_listed, url });
+      return quizzesQueries.update(owner_id, title, public_listed, url);
     })
     .then((updatedquiz) => {
       res.status(201).json({ message: "quiz updated!", quiz: updatedquiz });
