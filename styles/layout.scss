@@ -181,6 +181,57 @@ ol {
 }
 //////
 
+////Quiz Section////
+#quiz {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #0B5EB6;
+  padding: 30px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#quiz-form {
+  margin-bottom: 30px;
+}
+
+#quiz-form p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#quiz-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#quiz-form input[type="radio"] {
+  margin-right: 10px;
+}
+
+#quiz-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+#quiz-submit-btn,
+#prev-btn,
+#next-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#quiz-submit-btn:hover,
+#prev-btn:hover,
+#next-btn:hover {
+  background-color: #1D2236;
+}
+/////////
+
 
 footer {
   position: fixed;
