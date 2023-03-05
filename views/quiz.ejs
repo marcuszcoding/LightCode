@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Quiz Page</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/users.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <a href="#">LightQuiz</a>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Create Quiz</a></li>
+      <li><a href="#">My Quizzes</a></li>
+      <li><a href="#">Log In</a></li>
+    </ul>
+  </nav>
+  <div id="quiz">
+    <form id="quiz-form">
+        <p>Question?</p>
+        <label>
+            <input type="radio" name="answer" value="a">
+            A.
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="answer" value="b">
+            B.
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="answer" value="c">
+            C.
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="answer" value="d">
+            D.
+        </label>
+        <br>
+        <button id="quiz-submit-btn" type="submit">Submit</button>
+    </form>
+    <div id="quiz-nav">
+        <button id="prev-btn">Previous</button>
+        <button id="next-btn">Next</button>
+    </div>
+</div>
+
+  <footer>
+    <p>&copy; 2023 LightQuiz. All rights reserved.</p>
+  </footer>
+</body>
