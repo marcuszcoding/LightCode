@@ -127,7 +127,7 @@ ol {
   margin: 0;
 }
 
-//// My quizzes page
+/*My quizzes page*/
 .created-quizzes,
 .attempted-quizzes {
   display: grid;
@@ -179,9 +179,9 @@ ol {
 .btn:hover {
   background-color: #0B5EB6;
 }
-//////
+/* */
 
-////Quiz Section////
+/*Quiz Section*/
 #quiz {
   max-width: 800px;
   margin: 50px auto;
@@ -230,7 +230,105 @@ ol {
 #next-btn:hover {
   background-color: #1D2236;
 }
-/////////
+/* */
+
+/*Quiz Result Page*/
+.result-container {
+  max-width: 700px;
+  height: 650px;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.result-container h1 {
+  color: #0B5EB6;
+  font-size: 2.0rem;
+  margin-top: 0px;
+}
+
+.result-container h2.score {
+  font-size: 2.0rem;
+  color: #8BC34A;
+}
+
+.result-container .questions {
+  margin-top: 0px;
+  text-align: left;
+}
+
+.result-container .questions p {
+  color: #0B5EB6;
+  font-size: 1.0rem;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.result-container .questions ul {
+  list-style: none;
+  margin: 10px 0 30px;
+}
+
+.result-container .questions ul li span {
+  font-size: 1.0rem;
+}
+
+.result-container .questions ul li span.correct {
+  color: #8BC34A;
+}
+
+.result-container .questions ul li span.user-answer {
+  color: #03A9F4;
+}
+
+.result-container .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-container .buttons button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.result-container .buttons button.share-result {
+  background-color: #8BC34A;
+  color: #fff;
+}
+
+.result-container .buttons button.share-result:hover {
+  background-color: #689F38;
+}
+
+.result-container .buttons button.share-quiz {
+  background-color: #FFC107;
+  color: #fff;
+}
+
+.result-container .buttons button.share-quiz:hover {
+  background-color: #FFA000;
+}
+
+.result-container .buttons button.retake {
+  background-color: #03A9F4;
+  color: #fff;
+}
+
+.result-container .buttons button.retake:hover {
+  background-color: #039BE5;
+}
+/**/
 
 
 footer {
