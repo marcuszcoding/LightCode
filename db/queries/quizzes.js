@@ -116,7 +116,7 @@ const createQuizQuestion = function(info) {
         .catch(err => err.message);
     };
 
-  // Returns all answers belonging to the given question, with the given type
+  // Returns all answers belonging to the given question
   const getAnswersForQuestion = (question_id) => {
     return db.query = (
     `
