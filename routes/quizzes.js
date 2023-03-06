@@ -19,4 +19,10 @@ const router = express.Router();
     res.render('my_quizzes')
   });
 
+// QUIZ - GET, RENDERS QUIZ PAGE
+
+  router.get('/quiz', (req, res) => {
+    res.render('quiz')
+  });
+
 module.exports = router;
