@@ -19,10 +19,16 @@ const router = express.Router();
     res.render('my_quizzes')
   });
 
-// QUIZ - GET, RENDERS QUIZ PAGE
+// QUIZ - GET, Renders Quiz Attempt
 
-  router.get('/quiz', (req, res) => {
-    res.render('quiz')
+  router.get('/quiztake', (req, res) => {
+  res.render('quiz_take')
+  });
+
+// QUIZ - GET, Renders Quiz Score
+
+  router.get('/quizscore', (req, res) => {
+    res.render('quiz_score')
   });
 
 module.exports = router;
