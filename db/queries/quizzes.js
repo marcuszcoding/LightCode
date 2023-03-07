@@ -23,6 +23,19 @@ const getById = (id) => {
     .then((data) => data.rows[0]);
 };
 
+const getQuestionsById = (id) => {
+  return db
+    .query(
+      `SELECT quiz_questions.*, quiz_answers.* as quizanswers
+      FROM quiz_questions
+      JOIN quizzes ON quizzes.id = quiz_questions.quiz_id
+      JOIN quiz_answers ON quiz_answers.question_id = quiz_questions.id
+      WHERE quiz_id = $1;`,
+      [id]
+    )
+    .then((data) => data.rows);
+};
+
 const getPublicQuizzes = (id) => {
   return db
     .query(
@@ -158,4 +171,16 @@ module.exports = {
   createNewQuiz,
   getAnswersForQuiz,
   getAnswersForQuestion,
+  getPublicQuizzes,
+  getQuestionsById,
 };
+
+/*
+SELECT quiz_questions.*, quiz_answers.* as quizanswers
+FROM quiz_questions
+JOIN quizzes ON quizzes.id = quiz_questions.quiz_id
+JOIN quiz_answers ON quiz_answers.id = quiz_questions.id
+WHERE quiz_id = 1;
+*/
+
+// SELECT * FROM quiz_questions JOIN quizzes ON quizzes.id = quiz_questions.quiz_id WHERE quiz_id = $1;

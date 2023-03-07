@@ -34,11 +34,25 @@ router.get("/myquizzes", (req, res) => {
 
 // QUIZ - GET, Renders Quiz Attempt
 
+// router.get("/:id", (req, res) => {
+//   quizzesQueries
+//     .getById(req.params.id)
+//     .then((quiz) => {
+//       const templateData = { quiz };
+//       console.log(templateData);
+//       res.render("quiz_take", templateData);
+//     })
+//     .catch((err) => {
+//       console.log("Failure", err);
+//       res.render("home");
+//     });
+// });
+
 router.get("/:id", (req, res) => {
   quizzesQueries
-    .getById(req.params.id)
-    .then((quiz) => {
-      const templateData = { quiz };
+    .getQuestionsById(req.params.id)
+    .then((quizzes) => {
+      const templateData = { quizzes };
       console.log(templateData);
       res.render("quiz_take", templateData);
     })
