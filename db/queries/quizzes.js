@@ -60,7 +60,7 @@ const remove = (id) => {
     .then((data) => data.rows);
 };
 
-///// CREATE QUIZ QUERIES /////
+/// CREATE QUIZ QUERIES /////
 
 // Adds question to quiz-questions db - accepts an array
 const createQuizQuestion = function (info) {
