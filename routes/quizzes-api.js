@@ -4,16 +4,20 @@ const quizzesQueries = require("../db/queries/quizzes");
 // CRUD
 //CREATE - POST
 router.post("/", (req, res) => {
-  const { owner_id, title, public_listed, url } = req.body;
+  console.log("req.body", req.body)
+  const { owner_id = 1, title, public_listed, url, questions } = req.body;
   if (!owner_id || !title || !public_listed || !url) {
     return res
       .status(400)
       .json({ message: "All properties must be provided to create a quiz" });
   }
-
+// Need to chain database transactions
   const newQuiz = { owner_id, title, public_listed, url };
   quizzesQueries
-    .create(newQuiz)
+    .createNewQuiz(newQuiz)
+    .then((quiz) => {
+      res.status(201).send({ message: "quiz created", quiz });
+    })
     .then((quiz) => {
       res.status(201).send({ message: "quiz created", quiz });
     })
