@@ -11,7 +11,7 @@ router.post("/", (req, res) => {
       .status(400)
       .json({ message: "All properties must be provided to create a quiz" });
   }
-// Need to chain database transactions
+// Need to chain database transactions, then redirect to myquizzes
   const newQuiz = { owner_id, title, public_listed, url };
   quizzesQueries
     .createNewQuiz(newQuiz)
