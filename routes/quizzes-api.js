@@ -2,11 +2,12 @@ const express = require("express");
 const router = express.Router();
 const quizzesQueries = require("../db/queries/quizzes");
 // CRUD
-//CREATE - POST
+//CREATE - POST FOR CREATE QUIZ
 router.post("/", (req, res) => {
   console.log("req.body", req.body)
-  const { owner_id = 1, title, public_listed, url, questions } = req.body;
-  if (!owner_id || !title || !public_listed || !url) {
+  const { owner_id = 1, title, public_listed, url} = req.body;
+  console.log(req.body)
+  if (!owner_id || !title || !public_listed) {
     return res
       .status(400)
       .json({ message: "All properties must be provided to create a quiz" });
@@ -16,16 +17,38 @@ router.post("/", (req, res) => {
   quizzesQueries
     .createNewQuiz(newQuiz)
     .then((quiz) => {
-      res.status(201).send({ message: "quiz created", quiz });
+      console.log("hello", quiz)
+      // res.status(201).send({ message: "quiz created", quiz });
+      req.body.questions.forEach(question => {
+        quizzesQueries.createQuizQuestion([quiz.id, question.question])
+        .then((quizQuestion) => {
+          console.log(quizQuestion)
+          question.answers.forEach(answer => {
+            quizzesQueries.createQuizAnswer([quizQuestion[0].id, answer.answer, answer.isCorrect]);
+          })
+        })
+      });
+
+      return quiz
     })
-    .then((quiz) => {
-      res.status(201).send({ message: "quiz created", quiz });
-    })
-    .catch((err) => {
-      res
-        .status(500)
-        .json({ message: "Error creating quiz", error: err.message });
-    });
+    // .then((quiz) => {
+    //   const newQuestion = { quiz_id: quiz.id, question: req.body}
+    //   console.log("2nd Hello", quiz, req.body)
+    //   quizzesQueries.createQuizQuestion()
+    //   // res.status(201).send({ message: "quiz questions created", quiz });
+    //   return quiz
+    // })
+    // .then((quiz) => {
+    //   console.log("3rd Hello", quiz)
+    //   quizzesQueries.createQuizAnswer()
+    //   res.status(201).send({ message: "quiz created", quiz });
+    // })
+    // .catch((err) => {
+    //   res
+    //     .status(500)
+    //     console.log("4th Hello", quiz)
+    //     .json({ message: "Error creating quiz", error: err.message });
+    // });
 });
 
 // READ ALL = GET
