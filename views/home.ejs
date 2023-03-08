@@ -33,30 +33,12 @@
         <h2>Brighten Your Coding Future with LightQuiz</h2>
       </section>
       <section class="quizzes">
+        <% for(const quiz of quizzes) { %>
         <div class="quiz">
-          <h3><%= quizzes[0].title %></h3>
-          <a href="#" class="button">Start Quiz</a>
+          <h3><%= quiz.title %></h3>
+          <a href="/quizzes/<%= quiz.id %>" class="button">Start Quiz</a>
         </div>
-        <div class="quiz">
-          <h3>Quiz 2</h3>
-          <a href="#" class="button">Start Quiz</a>
-        </div>
-        <div class="quiz">
-          <h3>Quiz 3</h3>
-          <a href="#" class="button">Start Quiz</a>
-        </div>
-        <div class="quiz">
-          <h3>Quiz 4</h3>
-          <a href="#" class="button">Start Quiz</a>
-        </div>
-        <div class="quiz">
-          <h3>Quiz 5</h3>
-          <a href="#" class="button">Start Quiz</a>
-        </div>
-        <div class="quiz">
-          <h3>Quiz 6</h3>
-          <a href="#" class="button">Start Quiz</a>
-        </div>
+        <% } %>
       </section>
     </main>
     <footer>
