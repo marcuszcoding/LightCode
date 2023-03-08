@@ -13,24 +13,25 @@ router.post("/", (req, res) => {
       .json({ message: "All properties must be provided to create a quiz" });
   }
 // Need to chain database transactions, then redirect to myquizzes
-  const newQuiz = { owner_id, title, public_listed, url };
-  quizzesQueries
-    .createNewQuiz(newQuiz)
-    .then((quiz) => {
-      console.log("hello", quiz)
-      // res.status(201).send({ message: "quiz created", quiz });
-      req.body.questions.forEach(question => {
-        quizzesQueries.createQuizQuestion([quiz.id, question.question])
-        .then((quizQuestion) => {
-          console.log(quizQuestion)
-          question.answers.forEach(answer => {
-            quizzesQueries.createQuizAnswer([quizQuestion[0].id, answer.answer, answer.isCorrect]);
-          })
+const newQuiz = { owner_id, title, public_listed, url };
+quizzesQueries
+  .createNewQuiz(newQuiz)
+  .then((quiz) => {
+    console.log("hello", quiz)
+    // res.status(201).send({ message: "quiz created", quiz });
+    req.body.questions.forEach(question => {
+      quizzesQueries.createQuizQuestion([quiz.id, question.question])
+      .then((quizQuestion) => {
+        console.log(quizQuestion)
+        question.answers.forEach(answer => {
+          quizzesQueries.createQuizAnswer([quizQuestion[0].id, answer.answer, answer.isCorrect]);
+          // res.status(201).send({ message: "quiz created", quiz });
         })
-      });
+      })
+    });
 
-      return quiz
-    })
+    return quiz
+  })
     // .then((quiz) => {
     //   const newQuestion = { quiz_id: quiz.id, question: req.body}
     //   console.log("2nd Hello", quiz, req.body)
