@@ -32,14 +32,14 @@
 
   <main>
     <section class="created-quizzes">
-      <h2>My Quizzes</h2>
+      <h2>My Quizzes<span class="emoji">&#127843;</span></h2>
       <% if (quizzes.length > 0) { %>
         <% quizzes.forEach((quiz) => { %>
           <div class="quiz-card">
             <div class="quiz-title"><%= quiz.title %></div>
             <div class="quiz-actions">
               <button class="btn delete-btn">Delete</button>
-              <button class="btn btn-info share-quiz" data-id="<%= quiz.owner_id %>">Share</button>
+              <button class="btn btn-info share-quiz" data-id="<%= quizzes.owner_id %>">Share</button>
             </div>
           </div>
         <% }); %>
