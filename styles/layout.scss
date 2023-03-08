@@ -174,14 +174,55 @@ main {
   font-size: 16px;
 }
 
+.quiz-actions .start-btn {
+  margin-right: 20px;
+}
+
+.quiz-actions button {
+  margin-right: 20px;
+}
+
 /* Style the delete-btn */
-.delete-btn {
-  background-color: #cc0000;
+.start-btn {
+  background-color: #03A9F4;
+  text-decoration: none;
 }
 
 /* Style the share-quiz button */
 .share-quiz {
   background-color: #33cc33;
+}
+
+/* Style the share box */
+.share-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.share-box input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.share-box button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.share-box button:hover {
+  background-color: #0069d9;
 }
 
 /* */
