@@ -33,33 +33,26 @@
   <main>
     <section class="created-quizzes">
       <h2>My Quizzes</h2>
-      <div class="quiz-card">
-        <div class="quiz-title">Quiz Title 1</div>
-        <div class="quiz-actions">
-          <button class="btn edit-btn">Edit</button>
-          <button class="btn share-btn">Share</button>
-        </div>
-      </div>
-      <div class="quiz-card">
-        <div class="quiz-title">Quiz Title 2</div>
-        <div class="quiz-actions">
-          <button class="btn edit-btn">Edit</button>
-          <button class="btn share-btn">Share</button>
-        </div>
-      </div>
-    </section>
+      <% if (quizzes.length > 0) { %>
+        <% quizzes.forEach((quiz) => { %>
+          <div class="quiz-card">
+            <div class="quiz-title"><%= quiz.title %></div>
+            <div class="quiz-actions">
+              <button class="btn delete-btn">Delete</button>
+              <button class="btn share-btn">Share</button>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p>No quizzes created yet.</p>
+      <% } %>
+      </section>
+
 
     <section class="attempted-quizzes">
       <h2>Quizzes History</h2>
       <div class="quiz-card">
-        <div class="quiz-title">Quiz Title 1</div>
-        <div class="quiz-actions">
-          <button class="btn score-btn">View Score</button>
-          <button class="btn retake-btn">Retake</button>
-        </div>
-      </div>
-      <div class="quiz-card">
-        <div class="quiz-title">Quiz Title 2</div>
+        <div class="quiz-title">Quiz 1</div>
         <div class="quiz-actions">
           <button class="btn score-btn">View Score</button>
           <button class="btn retake-btn">Retake</button>

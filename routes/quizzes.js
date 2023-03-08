@@ -30,8 +30,18 @@ router.get("/new", (req, res) => {
 
 // MY QUIZZES - GET, Renders My Quizzes Page
 
-router.get("/myquizzes", (req, res) => {
-  res.render("my_quizzes");
+router.get("/myquizzes/:owner_id", (req, res) => {
+  const { owner_id } = req.params;
+  instance
+    .get(`/api/quizzes?owner_id=${owner_id}`)
+    .then((response) => {
+      const templateData = { quizzes: response.data.quizzes };
+      res.render("my_quizzes", templateData);
+    })
+    .catch((err) => {
+      console.log("Failure", err);
+      res.render("my_quizzes");
+    });
 });
 
 // QUIZ - GET, Renders Quiz Attempt
