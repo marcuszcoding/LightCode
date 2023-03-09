@@ -89,7 +89,7 @@ const createQuizQuestion = function (info) {
     .catch((err) => err.message);
 };
 
-// Adds answers to quiz db - accepts a nested array
+// Adds answers to quiz db - accepts an array
 const createQuizAnswer = function (info) {
   return db
     .query(
@@ -119,7 +119,8 @@ const createURL = () => {
   }
 };
 // Adds quiz to db - accepts user_id string, and an object?
-const createNewQuiz = (id, info) => {
+const createNewQuiz = (info) => {
+  console.log("WHY")
   const createdURL = createURL();
   return db
     .query(
@@ -127,7 +128,7 @@ const createNewQuiz = (id, info) => {
       INSERT INTO quizzes (owner_id, title, public_listed, url)
       VALUES ($1, $2, $3, $4)
        RETURNING *;`,
-      [id, info.title, info.public_listed, createdURL || null]
+      [info.owner_id, info.title, info.public_listed, createdURL || null]
     )
     .then((data) => data.rows[0])
     .catch((err) => err.message);
@@ -158,6 +159,7 @@ const getAnswersForQuestion = (question_id) => {
     [question_id].then((data) => data.rows).catch((err) => err.message)
   );
 };
+
 
 module.exports = {
   create,
