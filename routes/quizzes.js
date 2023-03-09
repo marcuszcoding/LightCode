@@ -26,12 +26,6 @@ router.get("/new", (req, res) => {
   res.render("create_quiz");
 });
 
-// MY QUIZZES - GET, Renders My Quizzes Page
-
-router.get("/myquizzes", (req, res) => {
-  res.render("my_quizzes");
-});
-
 // QUIZ - GET, Renders Quiz Attempt
 
 // router.get("/:id", (req, res) => {
@@ -48,6 +42,20 @@ router.get("/myquizzes", (req, res) => {
 //     });
 // });
 
+router.get("/myquizzes", (req, res) => {
+  const userId = 1;
+  quizzesQueries
+  .getByUserId(userId)
+  .then((quizzes) => {
+    const templateData = { quizzes };
+    res.render("my_quizzes", templateData);
+  })
+  .catch((err) => {
+    console.log("Failure", err);
+    res.render("home", {quizzes: []});
+  });
+});
+
 router.get("/:id", (req, res) => {
   quizzesQueries
     .getQuestionsById(req.params.id)
@@ -58,9 +66,11 @@ router.get("/:id", (req, res) => {
     })
     .catch((err) => {
       console.log("Failure", err);
-      res.render("home");
+      res.render("home", {quizzes: []});
     });
 });
+
+
 
 // QUIZ - GET, Renders Quiz Score
 

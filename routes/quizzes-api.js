@@ -156,4 +156,19 @@ router.post("/:id/delete", (req, res) => {
     });
 });
 
+// GET - Retrieves all quizzes created by the specified owner
+router.get("/myquizzes/:owner_id", (req, res) => {
+  const { owner_id } = req.params;
+  quizzesQueries
+    .getByUserId(owner_id)
+    .then((quizzes) => {
+      res.json(quizzes);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .json({ message: "Error retrieving quizzes", error: err.message });
+    });
+});
+
 module.exports = router;
