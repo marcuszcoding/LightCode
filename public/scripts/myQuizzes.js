@@ -20,7 +20,7 @@ function loadQuizzes(owner_id) {
 $(document).on('click', '.share-quiz', function() {
   const id = $(this).attr('data-id');
   const baseUrl = window.location.origin;
-  const shareUrl = baseUrl + '/lightquiz/' + id;
+  const shareUrl = baseUrl + '/quizzes/' + id;
 
   // Only create the popup box once
   let shareBox = $('.share-box');
