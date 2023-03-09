@@ -23,6 +23,19 @@ const getById = (id) => {
     .then((data) => data.rows[0]);
 };
 
+const getQuestionsById = (id) => {
+  return db
+    .query(
+      `SELECT quiz_questions.*, quiz_answers.* as quizanswers
+      FROM quiz_questions
+      JOIN quizzes ON quizzes.id = quiz_questions.quiz_id
+      JOIN quiz_answers ON quiz_answers.question_id = quiz_questions.id
+      WHERE quiz_id = $1;`,
+      [id]
+    )
+    .then((data) => data.rows);
+};
+
 const getPublicQuizzes = (id) => {
   return db
     .query(
@@ -60,7 +73,7 @@ const remove = (id) => {
     .then((data) => data.rows);
 };
 
-///// CREATE QUIZ QUERIES /////
+/// CREATE QUIZ QUERIES /////
 
 // Adds question to quiz-questions db - accepts an array
 const createQuizQuestion = function (info) {
@@ -76,7 +89,7 @@ const createQuizQuestion = function (info) {
     .catch((err) => err.message);
 };
 
-// Adds answers to quiz db - accepts a nested array
+// Adds answers to quiz db - accepts an array
 const createQuizAnswer = function (info) {
   return db
     .query(
@@ -106,7 +119,8 @@ const createURL = () => {
   }
 };
 // Adds quiz to db - accepts user_id string, and an object?
-const createNewQuiz = (id, info) => {
+const createNewQuiz = (info) => {
+  console.log("WHY")
   const createdURL = createURL();
   return db
     .query(
@@ -114,7 +128,7 @@ const createNewQuiz = (id, info) => {
       INSERT INTO quizzes (owner_id, title, public_listed, url)
       VALUES ($1, $2, $3, $4)
        RETURNING *;`,
-      [id, info.title, info.public_listed, createdURL || null]
+      [info.owner_id, info.title, info.public_listed, createdURL || null]
     )
     .then((data) => data.rows[0])
     .catch((err) => err.message);
@@ -146,6 +160,7 @@ const getAnswersForQuestion = (question_id) => {
   );
 };
 
+
 module.exports = {
   create,
   getAll,
@@ -158,4 +173,16 @@ module.exports = {
   createNewQuiz,
   getAnswersForQuiz,
   getAnswersForQuestion,
+  getPublicQuizzes,
+  getQuestionsById,
 };
+
+/*
+SELECT quiz_questions.*, quiz_answers.* as quizanswers
+FROM quiz_questions
+JOIN quizzes ON quizzes.id = quiz_questions.quiz_id
+JOIN quiz_answers ON quiz_answers.id = quiz_questions.id
+WHERE quiz_id = 1;
+*/
+
+// SELECT * FROM quiz_questions JOIN quizzes ON quizzes.id = quiz_questions.quiz_id WHERE quiz_id = $1;

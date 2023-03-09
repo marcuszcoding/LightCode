@@ -2,17 +2,15 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
-
-const instance = axios.create({
-  baseURL: "http://127.0.0.1:8080",
-});
+const quizzesQueries = require("../db/queries/quizzes");
+const { route } = require("./quizzes-api");
 
 // HOME - GET, Renders Home Page (/quizzes)
 router.get("/", (req, res) => {
-  instance
-    .get("/api/quizzes")
-    .then((response) => {
-      const templateData = { quizzes: response.data.quizzes };
+  quizzesQueries
+    .getAll()
+    .then((quizzes) => {
+      const templateData = { quizzes };
       console.log(templateData);
       res.render("home", templateData);
     })
@@ -46,8 +44,32 @@ router.get("/myquizzes/:owner_id", (req, res) => {
 
 // QUIZ - GET, Renders Quiz Attempt
 
-router.get("/quiztake", (req, res) => {
-  res.render("quiz_take");
+// router.get("/:id", (req, res) => {
+//   quizzesQueries
+//     .getById(req.params.id)
+//     .then((quiz) => {
+//       const templateData = { quiz };
+//       console.log(templateData);
+//       res.render("quiz_take", templateData);
+//     })
+//     .catch((err) => {
+//       console.log("Failure", err);
+//       res.render("home");
+//     });
+// });
+
+router.get("/:id", (req, res) => {
+  quizzesQueries
+    .getQuestionsById(req.params.id)
+    .then((quizzes) => {
+      const templateData = { quizzes };
+      console.log(templateData);
+      res.render("quiz_take", templateData);
+    })
+    .catch((err) => {
+      console.log("Failure", err);
+      res.render("home");
+    });
 });
 
 // QUIZ - GET, Renders Quiz Score

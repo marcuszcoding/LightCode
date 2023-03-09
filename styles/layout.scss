@@ -1,18 +1,23 @@
 // See: https://sass-lang.com/
 
 body {
-  background-color: #252C4A;
+  background-color: #252c4a;
   color: white;
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Russo One', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Russo One", sans-serif;
 }
 
 nav {
-  background-color: #1D2236;
+  background-color: #1d2236;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +25,7 @@ nav {
 }
 
 .logo {
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
   font-size: 36px;
 }
 
@@ -63,7 +68,7 @@ form input[type="radio"] {
   font-size: 18px;
   border: none;
   border-radius: 4px;
-  background-color: #1D2236;
+  background-color: #1d2236;
   color: white;
   margin-top: 0.5rem;
 }
@@ -75,7 +80,7 @@ form input[type="radio"] {
 form button {
   padding: 0.5rem 1rem;
   font-size: 24px;
-  background-color: #1D2236;
+  background-color: #1d2236;
   color: white;
   border: none;
   border-radius: 4px;
@@ -98,7 +103,7 @@ form button {
 }
 
 ol {
-    list-style-type: upper-alpha;
+  list-style-type: upper-alpha;
 }
 
 .quizzes {
@@ -128,8 +133,19 @@ ol {
 }
 
 /*My quizzes page*/
-/* Center the main content */
-main {
+.created-quizzes,
+.attempted-quizzes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.quiz-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,6 +161,9 @@ main {
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
+}
+.quiz-card:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Style the quiz-title */
@@ -167,6 +186,7 @@ main {
 .btn {
   color: white;
   background-color: #0066cc;
+  //background-color: #107eeb;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -176,6 +196,9 @@ main {
 
 .quiz-actions .start-btn {
   margin-right: 20px;
+}
+.btn:hover {
+  background-color: #0b5eb6;
 }
 
 .quiz-actions button {
@@ -231,7 +254,7 @@ main {
 #quiz {
   max-width: 800px;
   margin: 50px auto;
-  background-color: #0B5EB6;
+  background-color: #0b5eb6;
   padding: 30px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -274,7 +297,7 @@ main {
 #quiz-submit-btn:hover,
 #prev-btn:hover,
 #next-btn:hover {
-  background-color: #1D2236;
+  background-color: #1d2236;
 }
 /* */
 
@@ -288,19 +311,19 @@ main {
   text-align: center;
   padding: 40px;
   background-color: #fff;
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
 .result-container h1 {
-  color: #0B5EB6;
-  font-size: 2.0rem;
+  color: #0b5eb6;
+  font-size: 2rem;
   margin-top: 0px;
 }
 
 .result-container h2.score {
-  font-size: 2.0rem;
-  color: #8BC34A;
+  font-size: 2rem;
+  color: #8bc34a;
 }
 
 .result-container .questions {
@@ -309,8 +332,8 @@ main {
 }
 
 .result-container .questions p {
-  color: #0B5EB6;
-  font-size: 1.0rem;
+  color: #0b5eb6;
+  font-size: 1rem;
   font-weight: bold;
   margin-top: 0px;
 }
@@ -321,15 +344,15 @@ main {
 }
 
 .result-container .questions ul li span {
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 
 .result-container .questions ul li span.correct {
-  color: #8BC34A;
+  color: #8bc34a;
 }
 
 .result-container .questions ul li span.user-answer {
-  color: #03A9F4;
+  color: #03a9f4;
 }
 
 .result-container .buttons {
@@ -349,39 +372,43 @@ main {
 }
 
 .result-container .buttons button.share-result {
-  background-color: #8BC34A;
+  background-color: #8bc34a;
   color: #fff;
 }
 
 .result-container .buttons button.share-result:hover {
-  background-color: #689F38;
+  background-color: #689f38;
 }
 
 .result-container .buttons button.share-quiz {
-  background-color: #FFC107;
+  background-color: #ffc107;
   color: #fff;
 }
 
 .result-container .buttons button.share-quiz:hover {
-  background-color: #FFA000;
+  background-color: #ffa000;
 }
 
 .result-container .buttons button.retake {
-  background-color: #03A9F4;
+  background-color: #03a9f4;
   color: #fff;
 }
 
 .result-container .buttons button.retake:hover {
-  background-color: #039BE5;
+  background-color: #039be5;
 }
 /**/
-
 
 footer {
   position: fixed;
   bottom: 0;
-  background-color: #1D2236;
+  background-color: #1d2236;
   padding: 1rem;
   width: 100%;
   text-align: center;
+}
+
+h3 {
+  color: #07396f;
+  // changed color of fonts for the quiz titles
 }
