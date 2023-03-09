@@ -267,11 +267,13 @@ main {
 #quiz-form p {
   font-weight: bold;
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 #quiz-form label {
   display: block;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 #quiz-form input[type="radio"] {
@@ -283,9 +285,7 @@ main {
   justify-content: space-between;
 }
 
-#quiz-submit-btn,
-#prev-btn,
-#next-btn {
+#quiz-submit-btn {
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
@@ -295,9 +295,7 @@ main {
   cursor: pointer;
 }
 
-#quiz-submit-btn:hover,
-#prev-btn:hover,
-#next-btn:hover {
+#quiz-submit-btn:hover {
   background-color: #1d2236;
 }
 /* */
