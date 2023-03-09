@@ -32,45 +32,21 @@
     <% if(quizzes.length > 0) {%>
     <h2><%= quizzes[0].title %></h2>
     <% } %>
-    <% for(let i = 0; i < quizzes.length; i+= 4) { %>
-    <form id="quiz-form">
+    <form id="quiz-form" action="/quizzes/submit_answers/<%=quizzes[0].quiz_id%>" method="post">
+      <% for(let i = 0; i < quizzes.length; i+= 4) { %>
       <p><%= quizzes[i].question%></p>
 
       <% for(const answer of quizzes) { %> <%if (answer.question_id ===
         quizzes[i].question_id){%>
       <label>
-        <input type="radio" name="answer" value="a" />
+        <input type="radio" name="answer[question<%=answer.question_id%>]" value="<%=answer.id%>" />
         <%= answer.answer%>
       </label>
       <% } %> <% } %>
-      <!-- <label>
-          <input type="radio" name="answer" value="a" />
-          A.
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="answer" value="b" />
-          B.
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="answer" value="c" />
-          C.
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="answer" value="d" />
-          D.
-        </label> -->
-      <br />
-      <button id="quiz-submit-btn" type="submit">Submit</button>
-    </form>
 
-    <% } %>
-    <div id="quiz-nav">
-      <button id="prev-btn">Previous</button>
-      <button id="next-btn">Next</button>
-    </div>
+      <% } %>
+      <button id=" quiz-submit-btn" type="submit">Submit</button>
+    </form>
   </div>
 
   <footer>

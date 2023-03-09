@@ -120,14 +120,14 @@ const createURL = () => {
 };
 // Adds quiz to db - accepts user_id string, and an object?
 const createNewQuiz = (info) => {
-  console.log("WHY")
+  console.log("WHY");
   const createdURL = createURL();
   return db
     .query(
       `
-      INSERT INTO quizzes (owner_id, title, public_listed, url)
-      VALUES ($1, $2, $3, $4)
-       RETURNING *;`,
+    INSERT INTO quizzes (owner_id, title, public_listed, url)
+    VALUES ($1, $2, $3, $4)
+    RETURNING *;`,
       [info.owner_id, info.title, info.public_listed, createdURL || null]
     )
     .then((data) => data.rows[0])
@@ -138,10 +138,10 @@ const createNewQuiz = (info) => {
 const getAnswersForQuiz = (quiz_id) => {
   return (
     (db.query = ` SELECT *
-        FROM quiz_answers
-        JOIN quiz_questions ON question_id = quiz_questions.id
-        WHERE quiz_id = $1
-        ORDER BY id;
+      FROM quiz_answers
+      JOIN quiz_questions ON question_id = quiz_questions.id
+      WHERE quiz_id = $1
+      ORDER BY id;
       `),
     [quiz_id].then((data) => data.rows).catch((err) => err.message)
   );
@@ -151,15 +151,44 @@ const getAnswersForQuiz = (quiz_id) => {
 const getAnswersForQuestion = (question_id) => {
   return (
     (db.query = `
-    SELECT *
-    FROM quiz_answers
-    WHERE question_id = $1
-    ORDER BY id;
-    `),
+        SELECT *
+        FROM quiz_answers
+        WHERE question_id = $1
+        ORDER BY id;
+        `),
     [question_id].then((data) => data.rows).catch((err) => err.message)
   );
 };
 
+const getCorrectAnswer = function (question_id) {
+  return db
+    .query(
+      `
+    SELECT id
+    FROM quiz_answers
+    WHERE is_correct = true AND question_id = $1 `,
+      [question_id]
+    )
+    .then((data) => data.rows[0].id)
+    .catch((err) => err.message);
+};
+
+const getQuizResult = function () {};
+
+// Query that inserts score into table with quiz id, owner  and
+
+const insertDataFromQuiz = (info) => {
+  return db
+    .query(
+      `
+  INSERT INTO quiz_results (quiz_id, owner_id, score)
+  VALUES ($1, $2, $3)
+  RETURNING *;`,
+      [info.quiz_id, info.owner_id, info.score]
+    )
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
 
 module.exports = {
   create,
@@ -175,14 +204,15 @@ module.exports = {
   getAnswersForQuestion,
   getPublicQuizzes,
   getQuestionsById,
+  getCorrectAnswer,
 };
 
 /*
-SELECT quiz_questions.*, quiz_answers.* as quizanswers
-FROM quiz_questions
-JOIN quizzes ON quizzes.id = quiz_questions.quiz_id
-JOIN quiz_answers ON quiz_answers.id = quiz_questions.id
-WHERE quiz_id = 1;
+      SELECT quiz_questions.*, quiz_answers.* as quizanswers
+      FROM quiz_questions
+      JOIN quizzes ON quizzes.id = quiz_questions.quiz_id
+      JOIN quiz_answers ON quiz_answers.id = quiz_questions.id
+      WHERE quiz_id = 1;
 */
 
 // SELECT * FROM quiz_questions JOIN quizzes ON quizzes.id = quiz_questions.quiz_id WHERE quiz_id = $1;
