@@ -19,7 +19,7 @@
 <body>
   <nav>
     <div class="logo">
-      <a href="#">LightQuiz</a>
+      <a href="/">LightQuiz</a>
     </div>
     <ul>
       <li><a href="/">Home</a></li>
@@ -28,6 +28,7 @@
       <li><a href="#">Log In</a></li>
     </ul>
   </nav>
+  <div class="quiz-wrapper">
   <div id="quiz">
     <% if(quizzes.length > 0) {%>
     <h2><%= quizzes[0].title %></h2>
@@ -48,7 +49,7 @@
       <button id=" quiz-submit-btn" type="submit">Submit</button>
     </form>
   </div>
-
+</div>
   <footer>
     <p>&copy; 2023 LightQuiz. All rights reserved.</p>
   </footer>

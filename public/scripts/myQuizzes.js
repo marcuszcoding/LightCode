@@ -43,6 +43,12 @@ $(document).on('click', '.share-quiz', function() {
   shareBox.show();
 });
 
+$(document).mouseup(function(e) {
+  const container = $('.share-box');
+  if (!container.is(e.target) && container.has(e.target).length === 0) {
+    container.hide();
+  }
+});
 
 
 

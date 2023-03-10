@@ -105,7 +105,9 @@ router.get("/quizresult/:id", (req, res) => {
   res.render("quiz_score", {
     score: req.query.score,
     total: req.query.totalQuestions,
+    quizId: req.params.id,
   });
 });
 
 module.exports = router;
+

@@ -252,60 +252,74 @@ main {
 /* */
 
 /*Quiz Section*/
-#quiz {
-  max-width: 800px;
-  margin: 50px auto;
-  background-color: #0b5eb6;
-  padding: 30px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+.quiz-wrapper {
+  max-width: 1000px;
+  max-height: 1100px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+  padding: 40px;
+  background-color:  rgb(224, 229, 234);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 #quiz-form {
-  margin-bottom: 30px;
+  margin-top: -100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 #quiz-form p {
+  color: #1d2236;
   font-weight: bold;
   margin-bottom: 10px;
   font-size: 20px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  width: 100%;
 }
 
 #quiz-form label {
-  display: block;
+  color: #1d2236;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin-bottom: 10px;
   font-size: 16px;
+  width: 100%;
 }
 
 #quiz-form input[type="radio"] {
   margin-right: 10px;
 }
 
-#quiz-nav {
-  display: flex;
-  justify-content: space-between;
-}
-
 #quiz-submit-btn {
-  background-color: #333;
+  background-color: #0066cc;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 #quiz-submit-btn:hover {
   background-color: #1d2236;
 }
+
 /* */
 
 /*Quiz Result Page*/
 .result-container {
   max-width: 700px;
-  height: 650px;
+  height: 350px;
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 150px;
   margin-bottom: 25px;
   text-align: center;
   padding: 40px;
@@ -321,7 +335,7 @@ main {
 }
 
 .result-container h2.score {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #8bc34a;
 }
 
@@ -330,31 +344,8 @@ main {
   text-align: left;
 }
 
-.result-container .questions p {
-  color: #0b5eb6;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 0px;
-}
-
-.result-container .questions ul {
-  list-style: none;
-  margin: 10px 0 30px;
-}
-
-.result-container .questions ul li span {
-  font-size: 1rem;
-}
-
-.result-container .questions ul li span.correct {
-  color: #8bc34a;
-}
-
-.result-container .questions ul li span.user-answer {
-  color: #03a9f4;
-}
-
 .result-container .buttons {
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
