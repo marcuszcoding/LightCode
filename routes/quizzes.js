@@ -102,35 +102,12 @@ router.post("/submit_answers/:id", async (req, res) => {
 // QUIZ - GET, Renders Quiz Score
 
 router.get("/quizresult/:id", (req, res) => {
-  const quizId = req.params.id;
-  quizzesQueries
-    .getById(quizId)
-    .then((quiz) => {
-      if (!quiz) {
-        res.status(404).send("Quiz not found");
-      } else {
-        const templateData = { quiz };
-        console.log(templateData);
-        res.render("quiz_score", {
-          score: req.query.score,
-          total: req.query.totalQuestions,
-          quizId: quiz.owner_id,
-        });
-      }
-    })
-    .catch((err) => {
-      console.log("Failure", err);
-      res.render("home", { quizzes: [] });
-    });
-});
-
-
-  /*res.render("quiz_score", {
+  res.render("quiz_score", {
     score: req.query.score,
     total: req.query.totalQuestions,
     quizId: req.params.id,
   });
-});*/
+});
 
 module.exports = router;
 
