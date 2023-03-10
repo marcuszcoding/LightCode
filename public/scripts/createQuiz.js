@@ -69,22 +69,26 @@ $(".create-quiz-form").submit(event => {
       // answer4: $(questionElements[i]).find(".answer-1-4").val(),
     });
     for (let j=1; j < 5; j++) {
-      questions[i].answers.push({answer: $(questionElements[i]).find(`.answer-1-${j}`).val(), isCorrect: false});
+      questions[i].answers.push({
+        answer: $(questionElements[i]).find(`.answer-1-${j}`).val(),
+        isCorrect: $(questionElements[i]).find(`.answer-1-${j}-correct:checked`).val() === "on"
+      });
     }
   }
+
+  console.log('questions', questions)
   // formatting data so the backend can consume it
   const data = {
     title: event.target["quiz-title"].value,
-    public_listed: event.target["isPublic"].value,
+    public_listed: event.target["privacy"].value,
     questions
   }
 
   console.log('data', data)
 
-  $.ajax("/api/quizzes", { method: 'POST', data})
-      .then(function(response) {
-        console.log(response)
-      });
+  $.ajax("/api/quizzes", { method: 'POST', data}).then(() => {
+    window.location.replace("http://localhost:8080/quizzes")
+  })
 }),
 
   $(".add-question-button").click(event => {
