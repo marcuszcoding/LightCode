@@ -120,7 +120,6 @@ const createURL = () => {
 };
 // Adds quiz to db - accepts user_id string, and an object?
 const createNewQuiz = (info) => {
-  console.log("WHY");
   const createdURL = createURL();
   return db
     .query(
@@ -130,7 +129,9 @@ const createNewQuiz = (info) => {
     RETURNING *;`,
       [info.owner_id, info.title, info.public_listed, createdURL || null]
     )
-    .then((data) => data.rows[0])
+    .then((data) =>  {
+      return data.rows[0]
+    })
     .catch((err) => err.message);
 };
 

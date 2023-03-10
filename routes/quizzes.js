@@ -10,8 +10,8 @@ router.get("/", (req, res) => {
   quizzesQueries
     .getAll()
     .then((quizzes) => {
-      const templateData = { quizzes };
-      console.log(templateData);
+      const publicQuizzes = quizzes.filter(q => q.public_listed)
+      const templateData = { quizzes: publicQuizzes };
       res.render("home", templateData);
     })
     .catch((err) => {
