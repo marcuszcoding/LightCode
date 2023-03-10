@@ -4,9 +4,9 @@
 <head>
   <title>Quiz Score</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -28,13 +28,13 @@
       <li><a href="#">Log In</a></li>
     </ul>
   </nav>
-<section>
-  <div class="result-container">
-    <h1>Your Quiz Score</h1>
-    <h2 class="score">5/5</h2>
+  <section>
+    <div class="result-container">
+      <h1>Your Quiz Score</h1>
+      <h2 class="score"><%=score%>/<%=total%></h2>
 
-    <div class="questions">
-      <ol>
+      <div class="questions">
+        <ol>
           <p>Question 1:</p>
           <ul>
             <li><span class="correct">Correct answer:</span></li>
@@ -65,20 +65,20 @@
             <li><span class="user-answer">Your answer:</span></li>
           </ul>
 
-      </ol>
-    </div>
+        </ol>
+      </div>
 
-    <div class="buttons">
-      <button class="share-result">Share Result</button>
-      <button class="share-quiz">Share Quiz</button>
-      <button class="retake">Retake</button>
-    </div>
+      <div class="buttons">
+        <button class="share-result">Share Result</button>
+        <button class="share-quiz">Share Quiz</button>
+        <button class="retake">Retake</button>
+      </div>
 
-  </div>
+    </div>
   </section>
   <footer>
     <p>&copy; 2023 LightQuiz. All rights reserved.</p>
   </footer>
- </body>
-</html>
+</body>
 
+</html>

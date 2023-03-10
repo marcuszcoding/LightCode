@@ -5,6 +5,7 @@ require("dotenv").config();
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -16,6 +17,7 @@ app.set("view engine", "ejs");
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(
   "/styles",
@@ -32,7 +34,7 @@ app.use(express.static("public"));
 const userApiRoutes = require("./routes/users-api");
 const widgetApiRoutes = require("./routes/widgets-api");
 const quizApiRoutes = require("./routes/quizzes-api"); // Interacting with the database
-const quizRoutes = require("./routes/quizzes"); //
+const quizRoutes = require("./routes/quizzes");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
