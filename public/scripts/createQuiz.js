@@ -8,10 +8,18 @@ const createQuestionElement = () => {
     <div>
       <label for="quiz-answers">Answers:</label>
       <ol>
-        <li><input type="text" id="answer-1-1" name="answer-1-1" class="answer-1-1" required></li>
-        <li><input type="text" id="answer-1-2" name="answer-1-2" class="answer-1-2" required></li>
-        <li><input type="text" id="answer-1-3" name="answer-1-3" class="answer-1-3" required></li>
-        <li><input type="text" id="answer-1-4" name="answer-1-4" class="answer-1-4" required></li>
+        <li><input type="text" id="answer-1-1" name="answer-1-1" class="answer-1-1" required>
+              <input type="checkbox" id="answer-1-1-correct" name="answer-1-1-correct" class="answer-1-1-correct">
+            </li>
+            <li><input type="text" id="answer-1-2" name="answer-1-2" class="answer-1-2" required>
+              <input type="checkbox" id="answer-1-2-correct" name="answer-1-2-correct" class="answer-1-2-correct">
+            </li>
+            <li><input type="text" id="answer-1-3" name="answer-1-3" class="answer-1-3" required>
+              <input type="checkbox" id="answer-1-3-correct" name="answer-1-3-correct" class="answer-1-3-correct">
+            </li>
+            <li><input type="text" id="answer-1-4" name="answer-1-4" class="answer-1-4" required>
+              <input type="checkbox" id="answer-1-4-correct" name="answer-1-4-correct" class="answer-1-4-correct">
+            </li>
       </ol>
     </div>
   </div>

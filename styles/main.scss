@@ -37,12 +37,14 @@ nav a {
   color: white;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2 {
   font-family: 'Russo One', sans-serif;
+  font-size: 30px;
 }
 
 h3 {
   color: #1d2236;
+  font-size: 25px;
 }
 
 .slogan {
@@ -84,16 +86,7 @@ nav a {
   color: white;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Russo One", sans-serif;
-}
-
-.hero {
+.slogan {
   text-align: center;
   padding: 3rem 0;
 }
@@ -105,15 +98,6 @@ h6 {
   justify-content: center;
 }
 
-.quiz {
-  background-color: white;
-  margin: 1rem;
-  padding: 1rem;
-  text-align: center;
-  width: calc(33.33% - 2rem);
-  max-width: 300px;
-}
-
 footer {
   background-color: #1d2236;
   padding: 1rem;
@@ -121,7 +105,7 @@ footer {
 }
 
 .quiz {
-  background-color: white;
+  background-color: rgb(224, 229, 234);
   margin: 1rem;
   padding: 1rem;
   text-align: center;

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap">
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
   <script defer src="/scripts/createQuiz.js"></script>
@@ -37,8 +37,8 @@
       <input type="text" id="quiz-title" name="quiz-title" required>
     </div>
     <div class="privacy">
-      <input id="is-private" type="radio" name="isPrivate" value="true">Private</input>
-      <input id="is-public" type="radio" name="isPublic" value="false">Public</input>
+      <input id="is-private" type="checkbox" name="isPrivate" value="true">Private</input>
+      <input id="is-public" type="checkbox" name="isPublic" value="false">Public</input>
     </div>
     <div class="questions-container">
       <div class="single-question">
@@ -47,19 +47,25 @@
         <div>
           <label for="quiz-answers">Answers:</label>
           <ol>
-            <li><input type="text" id="answer-1-1" name="answer-1-1" class="answer-1-1" required></li>
-            <li><input type="text" id="answer-1-2" name="answer-1-2" class="answer-1-2" required></li>
-            <li><input type="text" id="answer-1-3" name="answer-1-3" class="answer-1-3" required></li>
-            <li><input type="text" id="answer-1-4" name="answer-1-4" class="answer-1-4" required></li>
+            <li><input type="text" id="answer-1-1" name="answer-1-1" class="answer-1-1" required>
+              <input type="checkbox" id="answer-1-1-correct" name="answer-1-1-correct" class="answer-1-1-correct">
+            </li>
+            <li><input type="text" id="answer-1-2" name="answer-1-2" class="answer-1-2" required>
+              <input type="checkbox" id="answer-1-2-correct" name="answer-1-2-correct" class="answer-1-2-correct">
+            </li>
+            <li><input type="text" id="answer-1-3" name="answer-1-3" class="answer-1-3" required>
+              <input type="checkbox" id="answer-1-3-correct" name="answer-1-3-correct" class="answer-1-3-correct">
+            </li>
+            <li><input type="text" id="answer-1-4" name="answer-1-4" class="answer-1-4" required>
+              <input type="checkbox" id="answer-1-4-correct" name="answer-1-4-correct" class="answer-1-4-correct">
+            </li>
           </ol>
         </div>
       </div>
     </div>
     <div>
       <button class="add-question-button" type="submit">Add Question</button>
-    </div>
-    <div>
-      <button type="submit">Create Quiz</button>
+      <button class="create-quiz-button" type="submit">Create Quiz</button>
     </div>
   </form>
   <footer>
