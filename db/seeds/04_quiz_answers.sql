@@ -6,7 +6,7 @@ INSERT INTO quiz_answers (question_id, answer) VALUES (1, 'The memory location o
 
 INSERT INTO quiz_answers (question_id, answer) VALUES (2, 'var x = 5;');
 INSERT INTO quiz_answers (question_id, answer) VALUES (2, 'let y = 10;');
-INSERT INTO quiz_answers (question_id, answer) VALUES (2, 'cost z = 15;');
+INSERT INTO quiz_answers (question_id, answer) VALUES (2, 'const z = 15;');
 INSERT INTO quiz_answers (question_id, answer, is_correct) VALUES (2, 'All of the above', true);
 
 INSERT INTO quiz_answers (question_id, answer) VALUES (3, 'The current function');
@@ -38,9 +38,9 @@ INSERT INTO quiz_answers (question_id, answer) VALUES (7, '<p></p>');
 
 
 INSERT INTO quiz_answers (question_id, answer) VALUES (8, 'A hyperlink in HTML is a clickable link that allows users to navigate to other web pages');
-INSERT INTO quiz_answers (question_id, answer) VALUES (8, 'A hyperlink is HTML is a file that saves all data');
+INSERT INTO quiz_answers (question_id, answer) VALUES (8, 'A hyperlink in HTML is a file that saves all data');
 INSERT INTO quiz_answers (question_id, answer, is_correct) VALUES (8, 'A hyperlink in HTML creates a link to use in Javascript', true);
-INSERT INTO quiz_answers (question_id, answer) VALUES (8, 'A hyperlink is a link that is faster than other links because its hyper');
+INSERT INTO quiz_answers (question_id, answer) VALUES (8, 'A hyperlink in a link that is faster than other links because its hyper');
 
 
 INSERT INTO quiz_answers (question_id, answer) VALUES (9, 'It is used for creating the styles of a webpage');
